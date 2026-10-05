@@ -1,0 +1,194 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: var(--font-geist-sans), 'Geist', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), 'Geist Mono', ui-monospace, monospace;
+  --font-serif: var(--font-instrument-serif), 'Instrument Serif', Georgia, serif;
+
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-tint: var(--accent-tint);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-surface: var(--surface);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-rise: rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-blob: blob-morph 10s ease-in-out infinite;
+  --animate-blob-shadow: blob-morph 10s ease-in-out infinite reverse;
+  --animate-spin-slow: spin 18s linear infinite;
+  --animate-cursor-blink: cursor-blink 1s steps(2, start) infinite;
+
+  @keyframes cursor-blink {
+    to {
+      visibility: hidden;
+    }
+  }
+
+  @keyframes blob-morph {
+    0%,
+    100% {
+      border-radius: 64% 36% 52% 48% / 38% 62% 38% 62%;
+    }
+    33% {
+      border-radius: 38% 62% 40% 60% / 60% 34% 66% 40%;
+    }
+    66% {
+      border-radius: 56% 44% 66% 34% / 46% 64% 36% 54%;
+    }
+  }
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+:root {
+  color-scheme: light;
+  --background: #ffffff;
+  --surface: #fafafa;
+  --foreground: #0a0a0a;
+  --card: #fafafa;
+  --card-foreground: #0a0a0a;
+  --popover: #ffffff;
+  --popover-foreground: #0a0a0a;
+  --primary: #f97316;
+  --primary-foreground: #ffffff;
+  --secondary: #fafafa;
+  --secondary-foreground: #0a0a0a;
+  --muted: #f4f4f5;
+  --muted-foreground: #71717a;
+  --accent: #f97316;
+  --accent-hover: #ea580c;
+  --accent-foreground: #ffffff;
+  --accent-tint: #fff1e8;
+  --destructive: #dc2626;
+  --border: #e4e4e7;
+  --input: #e4e4e7;
+  --ring: #f97316;
+  --radius: 0.75rem;
+}
+
+.dark {
+  color-scheme: dark;
+  --background: #0a0a0a;
+  --surface: #131313;
+  --foreground: #fafafa;
+  --card: #131313;
+  --card-foreground: #fafafa;
+  --popover: #131313;
+  --popover-foreground: #fafafa;
+  --primary: #fb923c;
+  --primary-foreground: #0a0a0a;
+  --secondary: #131313;
+  --secondary-foreground: #fafafa;
+  --muted: #1c1c1c;
+  --muted-foreground: #a1a1aa;
+  --accent: #fb923c;
+  --accent-hover: #f97316;
+  --accent-foreground: #0a0a0a;
+  --accent-tint: #3a1d0a;
+  --destructive: #ef4444;
+  --border: #27272a;
+  --input: #27272a;
+  --ring: #fb923c;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+/* Film-grain overlay so dark mode does not read as flat black */
+.grain::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+  opacity: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 160px 160px;
+  mix-blend-mode: overlay;
+  transition: opacity 0.3s ease;
+}
+.dark .grain::before {
+  opacity: 0.06;
+}
+
+.eyebrow {
+  @apply text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.has-custom-cursor,
+.has-custom-cursor * {
+  cursor: none !important;
+}
+
+.blob-shape {
+  border-radius: 64% 36% 52% 48% / 38% 62% 38% 62%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .animate-rise,
+  .animate-blob,
+  .animate-blob-shadow,
+  .animate-spin-slow {
+    animation: none;
+  }
+}
