@@ -135,7 +135,7 @@ export function Experience() {
                       isActive ? 'scale-105 border-accent shadow-[0_0_0_6px] shadow-accent/15' : isPast ? 'border-accent/60' : 'border-border',
                     )}
                   >
-                    <Icon className={cn('size-4 transition-colors duration-500', isActive || isPast ? 'text-accent' : 'text-muted-foreground')} />
+                    <Icon className={cn('size-4 transition-colors duration-500', isActive || isPast ? 'text-accent-text' : 'text-muted-foreground')} />
                   </span>
                 </div>
 
@@ -149,7 +149,7 @@ export function Experience() {
                     <div className="flex items-start justify-between gap-4">
                       <div>
                         <h3 className="text-xl font-semibold tracking-tight md:text-2xl">{item.title}</h3>
-                        <p className="mt-1 text-sm text-accent">{item.org}</p>
+                        <p className="mt-1 text-sm font-medium text-accent-text">{item.org}</p>
                       </div>
                       <Icon className="size-5 shrink-0 text-muted-foreground md:hidden" />
                     </div>

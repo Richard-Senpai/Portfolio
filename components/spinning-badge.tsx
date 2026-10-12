@@ -18,7 +18,7 @@ export function SpinningBadge({ text }: SpinningBadgeProps) {
           <path id="badge-ring-path" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" />
         </defs>
         <text
-          className="fill-accent font-mono text-[7.6px] font-semibold uppercase"
+          className="fill-accent-text font-mono text-[7.6px] font-semibold uppercase tracking-wider"
           textLength={232}
           lengthAdjust="spacing"
         >
@@ -28,7 +28,7 @@ export function SpinningBadge({ text }: SpinningBadgeProps) {
         </text>
       </svg>
 
-      <span className="relative flex size-9 items-center justify-center rounded-full bg-accent text-accent-foreground md:size-11">
+      <span className="relative flex size-9 items-center justify-center rounded-full bg-gradient-to-r from-[#d7ff7b] to-[#41e324] text-[#0A0A0A] shadow-sm md:size-11">
         <ArrowUpRight className="size-4 md:size-5" strokeWidth={2.25} />
       </span>
     </div>

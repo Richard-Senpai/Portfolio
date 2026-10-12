@@ -49,7 +49,7 @@ export function Services() {
                       'flex size-11 shrink-0 items-center justify-center rounded-full border transition-all duration-300',
                       open
                         ? 'rotate-45 border-accent bg-accent text-accent-foreground'
-                        : 'border-border text-muted-foreground group-hover:border-accent group-hover:text-accent',
+                        : 'border-border text-muted-foreground group-hover:border-accent group-hover:text-accent-text',
                     )}
                   >
                     <Plus className="size-5" />
@@ -86,7 +86,7 @@ export function Services() {
                         {service.tags.map((tag) => (
                           <li
                             key={tag}
-                            className="rounded-full border border-border bg-surface px-3 py-1 text-xs font-medium transition-colors hover:border-accent hover:text-accent"
+                            className="rounded-full border border-border bg-surface px-3 py-1 text-xs font-medium transition-colors hover:border-accent hover:text-accent-text"
                           >
                             {tag}
                           </li>

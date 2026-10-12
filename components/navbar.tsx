@@ -60,7 +60,7 @@ export function Navbar() {
               <a
                 href={link.href}
                 className={cn(
-                  'relative rounded-full px-3 py-1.5 text-sm transition-colors hover:text-accent',
+                  'relative rounded-full px-3 py-1.5 text-sm transition-colors hover:text-accent-text',
                   active === link.href ? 'text-foreground' : 'text-muted-foreground',
                 )}
               >
@@ -68,7 +68,7 @@ export function Navbar() {
                 <span
                   aria-hidden
                   className={cn(
-                    'absolute inset-x-3 -bottom-0.5 h-px bg-accent transition-transform duration-300',
+                    'absolute inset-x-3 -bottom-0.5 h-0.5 bg-gradient-to-r from-[#d7ff7b] to-[#41e324] transition-transform duration-300',
                     active === link.href ? 'scale-x-100' : 'scale-x-0',
                   )}
                 />
@@ -81,7 +81,7 @@ export function Navbar() {
           <ThemeToggle />
           <a
             href="#contact"
-            className="hidden rounded-full bg-accent px-4 py-2 text-sm font-medium text-accent-foreground transition-colors hover:bg-accent-hover sm:inline-flex"
+            className="hidden rounded-full bg-gradient-to-r from-[#d7ff7b] to-[#41e324] px-4 py-2 text-sm font-semibold text-[#0A0A0A] shadow-sm transition-all hover:brightness-105 hover:shadow-[0_0_20px_-4px_rgba(65,227,36,0.35)] sm:inline-flex"
           >
             Let&apos;s talk
           </a>
@@ -112,8 +112,8 @@ export function Navbar() {
                 href={link.href}
                 onClick={() => setOpen(false)}
                 className={cn(
-                  'block rounded-2xl px-4 py-3 text-lg font-medium transition-colors hover:bg-accent-tint hover:text-accent',
-                  active === link.href ? 'text-accent' : 'text-foreground',
+                  'block rounded-2xl px-4 py-3 text-lg font-medium transition-colors hover:bg-accent-tint hover:text-accent-text',
+                  active === link.href ? 'text-accent-text font-semibold' : 'text-foreground',
                 )}
               >
                 {link.label}

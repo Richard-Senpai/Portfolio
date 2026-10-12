@@ -20,7 +20,7 @@ export function Testimonials() {
           <dl className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border bg-border">
             {testimonials.stats.map((stat) => (
               <div key={stat.label} className="bg-surface p-6">
-                <dd className="text-4xl font-semibold tracking-tight text-accent md:text-5xl">{stat.value}</dd>
+                <dd className="text-4xl font-semibold tracking-tight md:text-5xl bg-gradient-to-r from-[#178208] to-[#1FA30A] bg-clip-text text-transparent dark:from-[#d7ff7b] dark:to-[#41e324]">{stat.value}</dd>
                 <dt className="mt-2 font-mono text-xs uppercase tracking-[0.15em] text-muted-foreground">{stat.label}</dt>
               </div>
             ))}
@@ -32,12 +32,12 @@ export function Testimonials() {
             key={active}
             className="animate-rise relative rounded-2xl border border-border bg-surface p-8 md:p-12"
           >
-            <span aria-hidden className="absolute left-8 top-4 font-serif text-[120px] leading-none text-accent md:left-12">
+            <span aria-hidden className="pointer-events-none absolute left-8 top-4 select-none font-serif text-[120px] leading-none text-accent-text/30 dark:text-accent/25 md:left-12">
               &ldquo;
             </span>
             <blockquote className="relative pt-14 text-pretty text-xl leading-relaxed md:text-2xl">{item.quote}</blockquote>
             <figcaption className="mt-8 flex items-center gap-4">
-              <span className="flex size-11 items-center justify-center rounded-full bg-accent-tint font-mono text-xs font-semibold text-accent">
+              <span className="flex size-11 items-center justify-center rounded-full bg-accent-tint font-mono text-xs font-semibold text-accent-text">
                 {item.initials}
               </span>
               <div>
@@ -59,8 +59,8 @@ export function Testimonials() {
                 className={cn(
                   'flex size-12 items-center justify-center rounded-full border font-mono text-xs font-semibold transition-all',
                   i === active
-                    ? 'border-accent bg-accent text-accent-foreground'
-                    : 'border-border bg-surface text-muted-foreground hover:border-accent hover:text-accent',
+                    ? 'border-accent bg-accent text-accent-foreground shadow-sm'
+                    : 'border-border bg-surface text-muted-foreground hover:border-accent hover:text-accent-text',
                 )}
               >
                 {t.initials}

@@ -22,6 +22,11 @@ export function Hero() {
                 <span className="relative inline-flex size-2 rounded-full bg-accent" />
               </span>
               Available for Work
+              <span className="ml-0.5 font-mono text-[11px]" aria-hidden>
+                <span className="text-dev-blue-text dark:text-dev-blue">&lt;</span>
+                <span className="text-dev-pink-text dark:text-dev-pink">/</span>
+                <span className="text-dev-blue-text dark:text-dev-blue">&gt;</span>
+              </span>
             </span>
 
             <h1
@@ -45,14 +50,14 @@ export function Hero() {
             >
               <a
                 href="#contact"
-                className="inline-flex h-12 items-center gap-2 rounded-full bg-accent px-6 text-sm font-medium text-accent-foreground transition-colors hover:bg-accent-hover"
+                className="inline-flex h-12 items-center gap-2 rounded-full bg-gradient-to-r from-[#d7ff7b] to-[#41e324] px-6 text-sm font-semibold text-[#0A0A0A] shadow-sm transition-all hover:brightness-105 hover:shadow-[0_0_24px_-4px_rgba(65,227,36,0.4)]"
               >
                 Let&apos;s talk
                 <ArrowDown className="size-4" />
               </a>
               <a
                 href={profile.cvUrl}
-                className="inline-flex h-12 items-center gap-2 rounded-full border border-border px-6 text-sm font-medium transition-colors hover:border-accent hover:text-accent"
+                className="inline-flex h-12 items-center gap-2 rounded-full border border-border px-6 text-sm font-medium transition-colors hover:border-accent hover:text-accent-text"
               >
                 <Download className="size-4" />
                 Download CV
@@ -69,7 +74,7 @@ export function Hero() {
           <dl className="mt-14 grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-3">
             {profile.stats.map((stat) => (
               <div key={stat.label} className="bg-surface p-8">
-                <dd className="text-5xl font-semibold tracking-tight text-accent md:text-6xl">{stat.value}</dd>
+                <dd className="text-5xl font-semibold tracking-tight md:text-6xl bg-gradient-to-r from-[#178208] to-[#1FA30A] bg-clip-text text-transparent dark:from-[#d7ff7b] dark:to-[#41e324]">{stat.value}</dd>
                 <dt className="mt-2 font-mono text-xs uppercase tracking-[0.15em] text-muted-foreground">{stat.label}</dt>
               </div>
             ))}

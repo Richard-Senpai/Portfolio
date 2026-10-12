@@ -103,7 +103,7 @@ export const projects = [
     image: '/images/project-gloow.png',
     year: '2024',
     role: 'Design & Development',
-    tags: ['High-Converting Shopify Build'],
+    tags: ['Complete Brand Identity'],
     platform: 'Shopify',
   },
 ]

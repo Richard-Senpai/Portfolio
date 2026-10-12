@@ -34,7 +34,7 @@ export function About() {
                 <div className="p-2 pt-4">
                   <p className="font-medium leading-snug">{award.title}</p>
                   <p className="mt-1 text-sm text-muted-foreground">{award.org}</p>
-                  <p className="mt-3 font-mono text-xs text-accent">{award.year}</p>
+                  <p className="mt-3 font-mono text-xs text-accent-text font-semibold">{award.year}</p>
                 </div>
               </li>
             ))}

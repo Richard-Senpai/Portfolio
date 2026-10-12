@@ -20,9 +20,9 @@ export function Contact() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Chat on WhatsApp"
-            className="group inline-flex items-center gap-3 text-sm font-medium text-foreground transition-colors hover:text-accent"
+            className="group inline-flex items-center gap-3 text-sm font-medium text-foreground transition-colors hover:text-accent-text"
           >
-            <span className="flex size-11 items-center justify-center rounded-full border border-accent text-accent transition-[transform,background-color,color] duration-300 group-hover:scale-105 group-hover:bg-accent group-hover:text-accent-foreground">
+            <span className="flex size-11 items-center justify-center rounded-full border border-accent text-accent-text transition-[transform,background-color,color] duration-300 group-hover:scale-105 group-hover:bg-accent group-hover:text-accent-foreground">
               <FaWhatsapp className="size-5" aria-hidden />
             </span>
             Chat on WhatsApp

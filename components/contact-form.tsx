@@ -102,14 +102,14 @@ export function ContactForm() {
       <div className="mt-6 flex flex-col-reverse items-start gap-6 sm:flex-row sm:items-center sm:justify-between md:mt-8">
         <button
           type="submit"
-          className="group inline-flex h-12 items-center gap-2 rounded-full bg-accent pl-6 pr-4 text-sm font-medium text-accent-foreground transition-colors hover:bg-accent-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          className="group inline-flex h-12 items-center gap-2 rounded-full bg-gradient-to-r from-[#d7ff7b] to-[#41e324] pl-6 pr-4 text-sm font-semibold text-[#0A0A0A] shadow-sm transition-all hover:brightness-105 hover:shadow-[0_0_24px_-4px_rgba(65,227,36,0.4)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
         >
           {sent ? 'Opened your mail app' : 'Send message'}
           <ArrowUpRight className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
         </button>
         <a
           href={`mailto:${profile.email}?subject=${encodeURIComponent(profile.emailSubject)}`}
-          className="text-base text-muted-foreground underline-offset-4 transition-colors hover:text-accent hover:underline md:text-lg"
+          className="text-base text-muted-foreground underline-offset-4 transition-colors hover:text-accent-text hover:underline md:text-lg"
         >
           {profile.email}
         </a>

@@ -35,7 +35,7 @@ export function Footer() {
                   aria-label={label}
                   target={external ? '_blank' : undefined}
                   rel={external ? 'noopener noreferrer' : undefined}
-                  className="flex size-9 items-center justify-center rounded-full text-muted-foreground transition-[color,background-color,transform] duration-300 hover:scale-110 hover:bg-accent-tint hover:text-accent"
+                  className="flex size-9 items-center justify-center rounded-full text-muted-foreground transition-[color,background-color,transform] duration-300 hover:scale-110 hover:bg-accent-tint hover:text-accent-text"
                 >
                   <Icon className="size-4" aria-hidden />
                 </a>
@@ -45,7 +45,7 @@ export function Footer() {
               <a
                 href="#home"
                 aria-label="Back to top"
-                className="flex size-9 items-center justify-center rounded-full border border-border text-foreground transition-colors hover:border-accent hover:text-accent"
+                className="flex size-9 items-center justify-center rounded-full border border-border text-foreground transition-colors hover:border-accent hover:text-accent-text"
               >
                 <ArrowUp className="size-4" />
               </a>

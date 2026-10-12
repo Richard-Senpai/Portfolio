@@ -31,7 +31,7 @@ export function Work() {
             type="button"
             onClick={prev}
             aria-label="Previous project"
-            className="flex size-11 items-center justify-center rounded-full border border-border transition-colors hover:border-accent hover:text-accent"
+            className="flex size-11 items-center justify-center rounded-full border border-border transition-colors hover:border-accent hover:text-accent-text"
           >
             <ArrowLeft className="size-4" />
           </button>
@@ -39,7 +39,7 @@ export function Work() {
             type="button"
             onClick={next}
             aria-label="Next project"
-            className="flex size-11 items-center justify-center rounded-full border border-border transition-colors hover:border-accent hover:text-accent"
+            className="flex size-11 items-center justify-center rounded-full border border-border transition-colors hover:border-accent hover:text-accent-text"
           >
             <ArrowRight className="size-4" />
           </button>
@@ -86,11 +86,25 @@ export function Work() {
                 <div>
                   <dt className="eyebrow">Type</dt>
                   <dd className="mt-2 flex flex-wrap gap-1.5">
-                    {project.tags.map((tag) => (
-                      <span key={tag} className="rounded-full bg-accent-tint px-2.5 py-0.5 text-xs font-medium text-accent">
-                        {tag}
-                      </span>
-                    ))}
+                    {project.tags.map((tag) => {
+                      const tagStyle =
+                        tag === 'Full Custom Web Build'
+                          ? 'bg-dev-blue-tint text-dev-blue-text border-dev-blue/30'
+                          : tag === 'Complete Brand Identity'
+                            ? 'bg-dev-pink-tint text-dev-pink-text border-dev-pink/30'
+                            : 'bg-accent-tint text-accent-text border-accent/30'
+                      return (
+                        <span
+                          key={tag}
+                          className={cn(
+                            'rounded-full border px-2.5 py-0.5 text-xs font-medium transition-colors',
+                            tagStyle,
+                          )}
+                        >
+                          {tag}
+                        </span>
+                      )
+                    })}
                   </dd>
                 </div>
                 <div>
@@ -103,7 +117,7 @@ export function Work() {
             <div className="flex items-start md:items-end">
               <a
                 href="#contact"
-                className="inline-flex h-12 items-center gap-2 rounded-full bg-accent px-6 text-sm font-medium text-accent-foreground transition-colors hover:bg-accent-hover"
+                className="inline-flex h-12 items-center gap-2 rounded-full bg-gradient-to-r from-[#d7ff7b] to-[#41e324] px-6 text-sm font-semibold text-[#0A0A0A] shadow-sm transition-all hover:brightness-105 hover:shadow-[0_0_24px_-4px_rgba(65,227,36,0.4)]"
               >
                 Let&apos;s talk
                 <ArrowRight className="size-4" />
@@ -123,7 +137,7 @@ export function Work() {
               onClick={() => setIndex(i)}
               className={cn(
                 'h-1.5 rounded-full transition-all duration-300',
-                i === index ? 'w-8 bg-accent' : 'w-1.5 bg-border hover:bg-muted-foreground',
+                i === index ? 'w-8 bg-gradient-to-r from-[#d7ff7b] to-[#41e324]' : 'w-1.5 bg-border hover:bg-muted-foreground',
               )}
             />
           ))}
